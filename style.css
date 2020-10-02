@@ -1,0 +1,23 @@
+body
+{
+  background-size: cover;
+  background-position: center;
+}
+
+.heading {
+    font-size: 30px;
+    width: 100%;
+}
+
+.heading h1 {
+    display: inline;
+}
+
+.heading button {
+    float: left;
+}
+
+.heading:hover {
+    color: dodgerblue;
+    border-width: 0px;
+}
