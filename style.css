@@ -7,6 +7,7 @@ body
 .heading {
     font-size: 30px;
     width: 100%;
+    text-align: left;
 }
 
 .heading h1 {
@@ -14,10 +15,10 @@ body
 }
 
 .heading button {
-    float: left;
+    float: right;
 }
 
 .heading:hover {
-    color: dodgerblue;
+    background-color: rgb(253, 74, 74);
     border-width: 0px;
 }
