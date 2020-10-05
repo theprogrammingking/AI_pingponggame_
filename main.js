@@ -36,10 +36,8 @@ function modalLoaded() {
   console.log("modal is loaded");
 }
 
-function draw(){
-
-  image(video , 0 , 0 , 700 , 600);
- background(0); 
+function draw() {
+ background(video); 
 
  fill("black");
  stroke("black");
