@@ -37,7 +37,7 @@ function modalLoaded() {
 }
 
 function draw() {
- background(video); 
+ image(video , 0 , 0 , 700 , 600); 
 
  fill("black");
  stroke("black");
