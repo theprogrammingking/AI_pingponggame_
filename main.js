@@ -30,7 +30,6 @@ function setup(){
   video.size(700 , 600);
 
   poseNet = ml5.poseNet(video , modalLoaded);
-  poseNet.on('pose' , gotPoses);
 }
 
 function modalLoaded() {
