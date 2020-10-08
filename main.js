@@ -1,4 +1,9 @@
 
+// Right Wrsts variables
+rightwristX = 0;
+rightwristY = 0;
+right_score = 0;
+
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -30,14 +35,32 @@ function setup(){
   video.size(700 , 600);
 
   poseNet = ml5.poseNet(video , modalLoaded);
+  poseNet.on('pose' , gotPoses);
+}
+
+function gotPoses(results) {
+  if (results.length > 0) {
+    console.log(results);
+    rightwristX = results[0].pose.rightWrist.x;
+    rightwristY = results[0].pose.rightWrist.y;
+    right_score = results[0].keypoints[10].score;
+    console.log("Right Wrist X: "+rightwristX+" Right Wrist Y: "+rightwristY+" Score: "+right_score+"....;");
+  }
 }
 
 function modalLoaded() {
   console.log("modal is loaded");
 }
 
-function draw() {
- image(video , 0 , 0 , 700 , 600); 
+function draw(){
+
+  image(video , 0 , 0 , 700 , 600);
+
+ if (right_score > 0.2) {
+   fill(0, 0, 128);
+   stroke(0, 0, 128);
+   circle(rightwristX , rightwristY , 15);
+ }
 
  fill("black");
  stroke("black");
