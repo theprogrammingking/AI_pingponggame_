@@ -43,7 +43,7 @@ function gotPoses(results) {
     console.log(results);
     rightwristX = results[0].pose.rightWrist.x;
     rightwristY = results[0].pose.rightWrist.y;
-    right_score = results[0].keypoints[10].score;
+    right_score = results[0].pose.keypoints[10].score;
     console.log("Right Wrist X: "+rightwristX+" Right Wrist Y: "+rightwristY+" Score: "+right_score+"....;");
   }
 }
