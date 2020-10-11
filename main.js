@@ -1,9 +1,21 @@
 
 gameStatus = "";
 
+//start and restart
 function startGame() {
   gameStatus = "start";
   document.getElementById("status").innerHTML = "Game Is Loaded";
+}
+function restart() {
+  pcscore = 0;
+  playerscore = 0;
+  loop();
+}
+
+//preload to load the sounds
+function preload() {
+  hit = loadSound("ball_touch_paddel.wav");
+  lost = loadSound("missed.wav");
 }
 
 // Right Wrsts variables
@@ -11,8 +23,7 @@ rightwristX = 0;
 rightwristY = 0;
 right_score = 0;
 
-/*created by prashant shukla */
-
+// code start
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -156,9 +167,11 @@ function move(){
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
     ball.dx = -ball.dx+0.5; 
+    hit.play();
   }
   else{
     pcscore++;
+    lost.play();
     reset();
     navigator.vibrate(100);
   }
@@ -171,7 +184,7 @@ if(pcscore ==4){
     stroke("white");
     textSize(25)
     text("Game Over!☹☹",width/2,height/2);
-    text("Reload The Page!",width/2,height/2+30)
+    text("Press the Restart Button to play again!",width/2,height/2+30)
     noLoop();
     pcscore = 0;
 }
