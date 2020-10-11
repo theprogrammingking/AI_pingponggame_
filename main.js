@@ -115,6 +115,9 @@ if(gameStatus == "start") {
     
     //function move call which in very important
      move();
+    }
+ 
+  }
 
      //function reset when ball does notcame in the contact of padde
      function reset(){
@@ -149,9 +152,7 @@ if(gameStatus == "start") {
       text(pcscore,555,50)
    }
 
- }
  
-}
 
 
 //very important function of this game
