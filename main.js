@@ -115,12 +115,13 @@ if(gameStatus == "start") {
     
     //function move call which in very important
      move();
+
      //function reset when ball does notcame in the contact of padde
-    function reset(){
-     ball.x = width/2+100,
-     ball.y = height/2+100;
-     ball.dx=3;
-     ball.dy =3;
+     function reset(){
+       ball.x = width/2+100,
+       ball.y = height/2+100;
+       ball.dx=3;
+       ball.dy =3;
      
      }
 
